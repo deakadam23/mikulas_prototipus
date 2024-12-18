@@ -1,0 +1,145 @@
+/* Alapbeállítások */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+main{
+    width: 80%;
+}
+body {
+    background: url('hatter.jpg') no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Fő konténer */
+.container {
+    display: grid;
+    grid-template-rows: 550px 50px auto 50px;
+    gap: 10px;
+    background-color: rgb(255, 255, 230);
+    width: 80%;
+    max-width: 1000px;
+    margin: 20px auto;
+}
+
+/* Fejléc */
+header {
+    background: url('fejlec.jpg') no-repeat center center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0.8;
+}
+
+header h1 {
+    color: red;
+    font-family: cursive;
+    font-weight: bold;
+    font-size: 60px;
+    text-align: center;
+}
+
+/* Navigáció */
+nav {
+    background-color: red;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 50px;
+    
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav li {
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
+    padding: 5px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 25px 50px;
+}
+
+nav li:hover {
+    background-color: green;
+}
+
+/* Tartalom Grid */
+.content {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr; /* Bal aside, középső article, jobb aside */
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Bal oldali képek */
+aside.left {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+aside.left img,
+aside.right img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Jobb oldali kép */
+aside.right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Cikk tartalom */
+article {
+    text-align: justify;
+    font-size: 10px;
+}
+
+article h2 {
+    font-size: 15px;
+    color: #ff1a1a;
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+    margin-bottom: 10px;
+}
+
+/* Lábléc */
+footer {
+    background-color: red;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}
+
+/* Reszponzív beállítás */
+@media screen and (max-width: 700px) {
+    .content {
+        grid-template-columns: 1fr;
+    }
+
+    aside.left,
+    aside.right {
+        order: 2;
+    }
+
+    article {
+        order: 1;
+    }
+}
